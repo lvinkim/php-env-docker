@@ -9,3 +9,7 @@
 ## 预装工具
 * composer
 
+
+## 目录
+
+* `ext-rdkafka` 目录，添加 ext-rdkafka 扩展
