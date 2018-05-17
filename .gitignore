@@ -1,5 +1,7 @@
 /*
 
 !.gitignore
+
+!/ext-rdkafka/
 !Dockerfile
 !README.md
