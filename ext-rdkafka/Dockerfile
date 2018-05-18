@@ -18,8 +18,7 @@ RUN apt-get update && apt-get install -y \
     php-pear \
     php-xdebug \
     php-mongodb \
-  && rm -rf /var/lib/apt/lists/* \
-  && mkdir /run/php
+  && rm -rf /var/lib/apt/lists/* && apt-get clean
 
 # 安装 composer 相关
 RUN apt-get update && apt-get install -y \
@@ -42,7 +41,7 @@ RUN apt-get update && apt-get install -y \
   && pecl install rdkafka \
   && echo "extension=rdkafka.so" > /etc/php/7.1/mods-available/rdkafka.ini \
   && phpenmod rdkafka \
-  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /var/lib/apt/lists/* && apt-get clean \
   && rm -rf /opt/librdkafka
 
 # 安装 swoole
