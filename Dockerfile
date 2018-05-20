@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y \
     php-pear \
     php-xdebug \
     php-mongodb \
+    php-redis \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
 
 RUN apt-get update && apt-get install -y \

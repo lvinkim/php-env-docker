@@ -4,6 +4,7 @@
 
 * xdebug
 * mongodb
+* redis
 * swoole
 
 ## 预装工具
