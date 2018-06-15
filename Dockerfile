@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
     php-xdebug \
     php-mongodb \
     php-redis \
+    php-zip \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
 
 RUN apt-get update && apt-get install -y \
