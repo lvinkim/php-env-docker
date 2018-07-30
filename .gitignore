@@ -3,5 +3,6 @@
 !.gitignore
 
 !/ext-rdkafka/
+!/php5.5.9/
 !Dockerfile
 !README.md
