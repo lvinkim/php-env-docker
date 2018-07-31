@@ -4,5 +4,6 @@
 
 !/ext-rdkafka/
 !/php5.5.9/
+!/php7.2.5/
 !Dockerfile
 !README.md
