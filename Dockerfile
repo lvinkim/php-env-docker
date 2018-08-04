@@ -41,3 +41,10 @@ RUN pecl install swoole \
   && echo "extension=swoole.so" > /etc/php/7.2/mods-available/swoole.ini \
   && phpenmod swoole
 
+# 安装 nginx
+RUN apt-get update && apt-get install -y \
+    nginx \
+    net-tools \
+    telnet \
+    curl \
+  && rm -rf /var/lib/apt/lists/* && apt-get clean

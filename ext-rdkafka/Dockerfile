@@ -52,4 +52,7 @@ RUN pecl install swoole \
 # 安装 nginx
 RUN apt-get update && apt-get install -y \
     nginx \
+    net-tools \
+    telnet \
+    curl \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
