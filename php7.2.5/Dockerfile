@@ -49,3 +49,13 @@ RUN apt-get update && apt-get install -y \
     telnet \
     curl \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
+
+# 补充 mysql 扩展
+RUN apt-get update && apt-get install -y \
+    php-mysql \
+  && rm -rf /var/lib/apt/lists/* && apt-get clean
+
+# 安装 swoole 扩展
+RUN pecl install swoole \
+  && echo "extension=swoole.so" > /etc/php/7.2/mods-available/swoole.ini \
+  && phpenmod swoole
