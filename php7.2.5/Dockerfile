@@ -59,3 +59,8 @@ RUN apt-get update && apt-get install -y \
 RUN pecl install swoole \
   && echo "extension=swoole.so" > /etc/php/7.2/mods-available/swoole.ini \
   && phpenmod swoole
+
+# 安装 gd 扩展
+RUN apt-get update && apt-get install -y \
+    php-gd \
+  && rm -rf /var/lib/apt/lists/* && apt-get clean
