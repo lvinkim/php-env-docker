@@ -63,17 +63,15 @@ RUN apt-get update && apt-get install -y \
     php-mysql \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
 
+# 安装 gd 扩展
+RUN apt-get update && apt-get install -y \
+    php-gd \
+  && rm -rf /var/lib/apt/lists/* && apt-get clean
+
 # 安装 rdkafka 扩展
 RUN apt-get update && apt-get install -y \
-    build-essential \
-  && cd /opt && git clone https://github.com/edenhill/librdkafka.git \
-  && cd /opt/librdkafka \
-  && ./configure \
-  && make \
-  && make install \
+    librdkafka-dev \
   && pecl install rdkafka \
   && echo "extension=rdkafka.so" > /etc/php/7.2/mods-available/rdkafka.ini \
   && phpenmod rdkafka \
-  && rm -rf /var/lib/apt/lists/* && apt-get clean \
-  && rm -rf /opt/librdkafka
-
+  && rm -rf /var/lib/apt/lists/* && apt-get clean
