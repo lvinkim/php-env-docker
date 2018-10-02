@@ -15,15 +15,6 @@ RUN echo "tzdata tzdata/Areas select Asia" > /tmp/preseed.txt \
 ## 安装 php
 RUN apt-get update && apt-get install -y \
     php \
+    php-pear \
+    php-dev \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
-
-# 安装 composer 相关
-RUN apt-get update && apt-get install -y \
-    git \
-    zip \
-    unzip \
-    wget \
-  && rm -rf /var/lib/apt/lists/* && apt-get clean \
-  && wget -O /usr/local/bin/composer https://getcomposer.org/download/1.6.2/composer.phar \
-  && chmod +x /usr/local/bin/composer
-
