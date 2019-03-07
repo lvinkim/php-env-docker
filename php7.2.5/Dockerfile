@@ -64,3 +64,11 @@ RUN pecl install swoole \
 RUN apt-get update && apt-get install -y \
     php-gd \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
+
+# 安装 rdkafka 扩展
+RUN apt-get update && apt-get install -y \
+    librdkafka-dev \
+  && pecl install rdkafka \
+  && echo "extension=rdkafka.so" > /etc/php/7.2/mods-available/rdkafka.ini \
+  && phpenmod rdkafka \
+  && rm -rf /var/lib/apt/lists/* && apt-get clean
